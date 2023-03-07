@@ -13,6 +13,15 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::resource('/', 'App\Http\Controllers\IndexController');
+Route::resource('/register', 'App\Http\Controllers\RegisterController');
+Route::resource('/signin', 'App\Http\Controllers\SigninController');
+Route::resource('/employer-dashboard', 'App\Http\Controllers\EmployerDashboardController');
+Route::resource('/employer-candidates', 'App\Http\Controllers\EmployerCandidateController');
+Route::resource('/employer-job', 'App\Http\Controllers\EmployerJobListController');
+Route::resource('/employer-job-post', 'App\Http\Controllers\EmployerJobController');
+Route::resource('/sas-dashboard', 'App\Http\Controllers\SasDashboardController');
+Route::resource('/coordinator_profile', 'App\Http\Controllers\CoordinatorProfileController');
+Route::resource('/sas_coordinator', 'App\Http\Controllers\SasCoordinatorController');
+Route::resource('/update_status', 'App\Http\Controllers\UpdateStatusController');
+Route::resource('/logout', 'App\Http\Controllers\LogoutController');

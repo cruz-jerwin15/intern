@@ -15,7 +15,6 @@ return new class extends Migration
     {
         Schema::create('priveleges', function (Blueprint $table) {
             $table->increments('privelege_id');
-            $table->integer('user_id');
             $table->string('privelege_name', 50);
             $table->string('status', 10);
             $table->timestamps();

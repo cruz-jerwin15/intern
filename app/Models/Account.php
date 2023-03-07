@@ -7,5 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Account extends Model
 {
-    use HasFactory;
+   public function coordinator(){
+    return $this->belongsTo(Coordinator::class,'id','user_id');
+   }
 }

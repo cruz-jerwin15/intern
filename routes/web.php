@@ -22,6 +22,8 @@ Route::resource('/employer-job', 'App\Http\Controllers\EmployerJobListController
 Route::resource('/employer-job-post', 'App\Http\Controllers\EmployerJobController');
 Route::resource('/sas-dashboard', 'App\Http\Controllers\SasDashboardController');
 Route::resource('/coordinator_profile', 'App\Http\Controllers\CoordinatorProfileController');
+Route::resource('/coordinator_dashboard', 'App\Http\Controllers\CoordinatorDashboardController');
 Route::resource('/sas_coordinator', 'App\Http\Controllers\SasCoordinatorController');
 Route::resource('/update_status', 'App\Http\Controllers\UpdateStatusController');
+Route::resource('/manage_class', 'App\Http\Controllers\ManageClassController');
 Route::resource('/logout', 'App\Http\Controllers\LogoutController');

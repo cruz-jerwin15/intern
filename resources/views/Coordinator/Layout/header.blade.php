@@ -12,7 +12,10 @@
     <meta name="keywords" content="index, page">
     <meta name="author" content="">
     <link rel="shortcut icon" type="image/x-icon" href="{{asset('employerassets/imgs/template/favicon.svg')}}">
+
     <link href="{{asset('employerassets/css/style.css?version=2.0')}}" rel="stylesheet">
+    <link href="{{asset('vendor/datatables/dataTables.bootstrap4.min.css')}}" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">
     
     <title>Coordinator - CareerIn </title>
   </head>
@@ -89,7 +92,7 @@
                         @php
                         $dashboard="active";
                         @endphp
-                    @elseif(session()->get('page')=="candidate")
+                    @elseif(session()->get('page')=="class")
                         @php
                         $candidate="active";
                         @endphp
@@ -102,9 +105,9 @@
                         $profiles="active";
                         @endphp
                     @endif
-                    <li> <a class="dashboard2 {{$dashboard}}" href="/employer-dashboard"><img src="{{asset('employerassets/imgs/page/dashboard/dashboard.svg')}}" alt="jobBox"><span class="name">Dashboard</span></a>
+                    <li> <a class="dashboard2 {{$dashboard}}" href="/corrdinator_dashboard"><img src="{{asset('employerassets/imgs/page/dashboard/dashboard.svg')}}" alt="jobBox"><span class="name">Dashboard</span></a>
                     </li>
-                    <li> <a class="dashboard2 {{$candidate}}" href="/employer-candidates"><img src="{{asset('employerassets/imgs/page/dashboard/candidates.svg')}}" alt="jobBox"><span class="name">Class</span></a>
+                    <li> <a class="dashboard2 {{$candidate}}" href="/manage_class"><img src="{{asset('employerassets/imgs/page/dashboard/candidates.svg')}}" alt="jobBox"><span class="name">Class</span></a>
                     </li>
                    
                     <li> <a class="dashboard2 {{$job}}" href="/employer-job"><img src="{{asset('employerassets/imgs/page/dashboard/jobs.svg')}}" alt="jobBox"><span class="name">Assessment</span></a>
@@ -155,9 +158,9 @@
                     $profiles="active";
                     @endphp
                     @endif
-                    <li> <a class="dashboard2 {{$dashboard}}" href="/employer-dashboard"><img src="{{asset('employerassets/imgs/page/dashboard/dashboard.svg')}}" alt="jobBox"><span class="name">Dashboard</span></a>
+                    <li> <a class="dashboard2 {{$dashboard}}" href="/coordinator_dashboard"><img src="{{asset('employerassets/imgs/page/dashboard/dashboard.svg')}}" alt="jobBox"><span class="name">Dashboard</span></a>
                     </li>
-                    <li> <a class="dashboard2 {{$candidate}}" href="/employer-candidates"><img src="{{asset('employerassets/imgs/page/dashboard/candidates.svg')}}" alt="jobBox"><span class="name">Class</span></a>
+                    <li> <a class="dashboard2 {{$candidate}}" href="/manage_class"><img src="{{asset('employerassets/imgs/page/dashboard/candidates.svg')}}" alt="jobBox"><span class="name">Class</span></a>
                     </li>
                    
                     <li> <a class="dashboard2 {{$job}}" href="/employer-job"><img src="{{asset('employerassets/imgs/page/dashboard/jobs.svg')}}" alt="jobBox"><span class="name">Assessment</span></a>
@@ -191,5 +194,9 @@
     <script src="{{asset('employerassets/js/plugins/charts/Animated.js')}}"></script>
     <script src="{{asset('employerassets/js/plugins/armcharts5-script.js')}}"></script>
     <script src="{{asset('employerassets/js/main.js?v=1.0')}}"></script>
+    <script src="{{asset('vendor/datatables/jquery.dataTables.min.js')}}"></script>
+    <script src="{{asset('vendor/datatables/dataTables.bootstrap4.min.js')}}"></script>
+    <script src="{{asset('employerassets/js/demo/datatables-demo.js')}}"></script>
+
   </body>
 </html>

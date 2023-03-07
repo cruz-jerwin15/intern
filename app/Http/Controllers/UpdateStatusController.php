@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Account;
+use App\Models\Room;
 
 class UpdateStatusController extends Controller
 {
@@ -61,6 +62,18 @@ class UpdateStatusController extends Controller
             $account->save();
             $path = "/sas_coordinator";
             return redirect($path)->with('success', 'Coordinator successfully removed!');
+        }else if($process=="REMOVECLASS"){
+            $room = Room::where('id',$statusid)->first();
+            $room->status="inactive";
+            $room->save();
+            $path = "/manage_class";
+            return redirect($path)->with('success', 'Class successfully removed!');
+        }else if($process=="RETRIEVECLASS"){
+            $room = Room::where('id',$statusid)->first();
+            $room->status="active";
+            $room->save();
+            $path = "/manage_class";
+            return redirect($path)->with('success', 'Class successfully retrieved!');
         }
         
     }

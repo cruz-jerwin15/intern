@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Account;
 use App\Models\Coordinator;
+use App\Models\Student;
 
 class SigninController extends Controller
 {
@@ -71,11 +72,27 @@ class SigninController extends Controller
                         session()->put('page', "profile");
 
                     }else{
-                        $path = "/coordinator-dashboard";
+                        $path = "/coordinator_dashboard";
                         session()->put('page', "dashboard");
                     }
                    
                   
+                }else if($account->privelege_id==3){
+                    $students = Student::where('user_id',$user_id)->get();
+                    if(count($students)>0){
+                        session()->put('profile', $students[0]->image_profile);
+                    }else{
+                        session()->put('profile','avatar.png');
+                    }
+                    
+                    if($status=="pending"){
+                        $path = "/student_profile";
+                        session()->put('page', "profile");
+
+                    }else{
+                        $path = "/student_dashboard";
+                        session()->put('page', "dashboard");
+                    }
                 }else{
                     $path = "/employer-dashboard";
                 }

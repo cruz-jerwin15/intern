@@ -7,5 +7,10 @@ use Illuminate\Database\Eloquent\Model;
 
 class StudentClass extends Model
 {
-    use HasFactory;
+    public function room(){
+        return $this->belongsTo(Room::class,'class_id');
+    }
+    public function account(){
+        return $this->belongsTo(Account::class,'user_id');
+    }
 }

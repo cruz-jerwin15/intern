@@ -7,5 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Level extends Model
 {
-    use HasFactory;
+    public function coursetracklevel(){
+        return $this->hasMany(UserLevelCourseTrack::class,'id','level_id');
+     }
 }

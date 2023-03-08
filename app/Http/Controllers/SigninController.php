@@ -86,11 +86,11 @@ class SigninController extends Controller
                     }
                     
                     if($status=="pending"){
-                        $path = "/student_profile";
+                        $path = "/intern_profile";
                         session()->put('page', "profile");
 
                     }else{
-                        $path = "/student_dashboard";
+                        $path = "/intern_dashboard";
                         session()->put('page', "dashboard");
                     }
                 }else{

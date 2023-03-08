@@ -7,5 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Question extends Model
 {
-    use HasFactory;
+    public function topic(){
+        return $this->belongsTo(Topic::class,'id','topic_id');
+    }
 }

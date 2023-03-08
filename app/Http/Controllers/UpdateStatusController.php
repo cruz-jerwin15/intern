@@ -5,6 +5,10 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Account;
 use App\Models\Room;
+use App\Models\StudentClass;
+use App\Models\Topic;
+use App\Models\Question;
+use App\Models\AssessmentClass;
 
 class UpdateStatusController extends Controller
 {
@@ -74,6 +78,49 @@ class UpdateStatusController extends Controller
             $room->save();
             $path = "/manage_class";
             return redirect($path)->with('success', 'Class successfully retrieved!');
+        }else if($process=="APPROVEDINTERN"){
+            $classid = $request->input('classid');
+            $result = StudentClass::where('user_id',$statusid)->first();
+            $result->status="active";
+            $result->save();
+            $path = "/coordinator_single_class/".$classid;
+            return redirect($path)->with('success', 'Class successfully approved an intern!');
+        }else if($process=="DISAPPROVEDINTERN"){
+            $classid = $request->input('classid');
+            $result = StudentClass::where('user_id',$statusid)->first();
+            $result->status="disapproved";
+            $result->save();
+            $path = "/coordinator_single_class/".$classid;
+            return redirect($path)->with('success', 'Class successfully disapproved an intern!');
+        }else if($process=="REMOVEDINTERN"){
+            $classid = $request->input('classid');
+            $result = StudentClass::where('user_id',$statusid)->first();
+            $result->status="inactive";
+            $result->save();
+            $path = "/coordinator_active_class/".$classid;
+            return redirect($path)->with('success', 'Class successfully removed an intern!');
+        }else if($process=="REMOVETOPIC"){
+            $classid = $request->input('classid');
+            $result = Topic::where('id',$statusid)->first();
+            $result->status="inactive";
+            $result->save();
+            $path = "/coordinator_assessment/".$classid;
+            return redirect($path)->with('success', 'Section successfully removed from this assessment!');
+        
+        }else if($process=="REMOVEQUESTION"){
+            $classid = $request->input('classid');
+            $result = Question::where('id',$statusid)->first();
+            $result->status="inactive";
+            $result->save();
+            $path = "/coordinator_assessment/".$classid;
+            return redirect($path)->with('success', 'Question successfully removed from this section!');
+        }
+        else if($process=="REMOVEDCLASSASSESS"){
+            $result = AssessmentClass::where('id',$statusid)->first();
+            $result->status="inactive";
+            $result->save();
+            $path = "/coordinator_assessment/";
+            return redirect($path)->with('success', 'Class successfully removed from this assessment!');
         }
         
     }

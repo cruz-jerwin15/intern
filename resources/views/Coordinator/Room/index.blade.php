@@ -9,7 +9,7 @@
         <div class="breadcrumbs">
           <ul> 
             <li> <a class="icon-home" href="#">Class</a></li>
-            <li><span>List of Class</span></li>
+            <li><span>My Class</span></li>
           </ul>
         </div>
       </div>
@@ -93,7 +93,7 @@
                                     <a href="#updateClass{{$room->id}}" style="width:3em;" data-bs-toggle="modal" class="btn btn-info btn-sm px-2 py-2">
                                         <i class="fa-solid fa-pencil"></i>
                                     </a>
-                                    <a href="#" style="width:3em;" data-bs-toggle="modal" class="btn btn-warning btn-sm px-2 py-2">
+                                    <a href="/coordinator_single_class/{{$room->id}}" style="width:3em;" class="btn btn-warning btn-sm px-2 py-2">
                                         <i class="fa-solid fa-eye"></i>
                                     </a>
                                     @if($room->status=="active")

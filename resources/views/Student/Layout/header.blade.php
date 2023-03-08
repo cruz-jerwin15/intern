@@ -17,7 +17,7 @@
     <link href="{{asset('vendor/datatables/dataTables.bootstrap4.min.css')}}" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">
     
-    <title>Coordinator - CareerIn </title>
+    <title>Intern - CareerIn </title>
   </head>
   <body>   
     <div id="preloader-active">
@@ -31,7 +31,7 @@
       <div class="container">
         <div class="main-header">
           <div class="header-left">
-            <div class="header-logo"><a class="d-flex" href="/"><h3>CareerIn</h3></a></div><span class="btn btn-grey-small ml-10">Coordinator area</span>
+            <div class="header-logo"><a class="d-flex" href="/"><h3>CareerIn</h3></a></div><span class="btn btn-grey-small ml-10">Intern area</span>
           </div>
           <div class="header-search"> 
             
@@ -54,7 +54,7 @@
                 <div class="info-member"> <strong class="color-brand-1">
                     {{session()->get('firstname')}}  {{session()->get('lastname')}}
                 </strong>
-                  <div class="dropdown"><a class="font-xs color-text-paragraph-2 icon-down" id="dropdownProfile" type="button" data-bs-toggle="dropdown" aria-expanded="false" data-bs-display="static">Coordinator</a>
+                  <div class="dropdown"><a class="font-xs color-text-paragraph-2 icon-down" id="dropdownProfile" type="button" data-bs-toggle="dropdown" aria-expanded="false" data-bs-display="static">Intern</a>
                     <ul class="dropdown-menu dropdown-menu-light dropdown-menu-end" aria-labelledby="dropdownProfile">
                       <li><a class="dropdown-item" href="/account-settings">Profiles</a></li>
                       <li><a class="dropdown-item" href="/logout">Logout</a></li>
@@ -84,7 +84,7 @@
                     @php
                         $dashboard="";
                         $candidate="";
-                        $assessment="";
+                        $job="";
                         $message="";
                         $profiles="";
                     @endphp
@@ -96,25 +96,25 @@
                         @php
                         $candidate="active";
                         @endphp
-                    @elseif(session()->get('page')=="assessment")
+                    @elseif(session()->get('page')=="job")
                         @php
-                        $assessment="active";
+                        $job="active";
                         @endphp
                     @elseif(session()->get('page')=="profile")
                         @php
                         $profiles="active";
                         @endphp
                     @endif
-                    <li> <a class="dashboard2 {{$dashboard}}" href="/coordinator_dashboard"><img src="{{asset('employerassets/imgs/page/dashboard/dashboard.svg')}}" alt="jobBox"><span class="name">Dashboard</span></a>
+                    <li> <a class="dashboard2 {{$dashboard}}" href="/intern_dashboard"><img src="{{asset('employerassets/imgs/page/dashboard/dashboard.svg')}}" alt="jobBox"><span class="name">Dashboard</span></a>
                     </li>
-                    <li> <a class="dashboard2 {{$candidate}}" href="/manage_class"><img src="{{asset('employerassets/imgs/page/dashboard/candidates.svg')}}" alt="jobBox"><span class="name">Class</span></a>
+                    <li> <a class="dashboard2 {{$candidate}}" href="/intern_class"><img src="{{asset('employerassets/imgs/page/dashboard/candidates.svg')}}" alt="jobBox"><span class="name">Class</span></a>
                     </li>
                    
-                    <li> <a class="dashboard2 {{$assessment}}" href="/coordinator_assessment"><img src="{{asset('employerassets/imgs/page/dashboard/jobs.svg')}}" alt="jobBox"><span class="name">Assessment</span></a>
+                    <li> <a class="dashboard2 {{$job}}" href="/employer-job"><img src="{{asset('employerassets/imgs/page/dashboard/jobs.svg')}}" alt="jobBox"><span class="name">Assessment</span></a>
                     </li>
                     <li> <a class="dashboard2 {{$message}}" href="/employer-message"><img src="{{asset('employerassets/imgs/page/dashboard/cv-manage.svg')}}" alt="jobBox"><span class="name">Message</span></a>
                     </li>
-                    <li> <a class="dashboard2 {{$profiles}}" href="/coordinator_profile"><img src="{{asset('employerassets/imgs/page/dashboard/profiles.svg')}}" alt="jobBox"><span class="name">Account</span></a>
+                    <li> <a class="dashboard2 {{$profiles}}" href="/intern_profile"><img src="{{asset('employerassets/imgs/page/dashboard/profiles.svg')}}" alt="jobBox"><span class="name">Account</span></a>
                     </li>
                     <li> <a class="dashboard2" href="/logout"><img src="{{asset('employerassets/imgs/page/dashboard/logout.svg')}}" alt="jobBox"><span class="name">Logout</span></a>
                     </li>
@@ -141,7 +141,7 @@
             @php
                         $dashboard="";
                         $candidate="";
-                        $assessment="";
+                        $job="";
                         $message="";
                         $profiles="";
                     @endphp
@@ -149,29 +149,25 @@
                         @php
                         $dashboard="active";
                         @endphp
-                    @elseif(session()->get('page')=="class")
+                    @elseif(session()->get('page')=="candidate")
                         @php
                         $candidate="active";
                         @endphp
-                     @elseif(session()->get('page')=="assessment")
-                     @php
-                     $assessment="active";
-                     @endphp
                     @elseif(session()->get('page')=="profile")
                     @php
                     $profiles="active";
                     @endphp
                     @endif
-                    <li> <a class="dashboard2 {{$dashboard}}" href="/coordinator_dashboard"><img src="{{asset('employerassets/imgs/page/dashboard/dashboard.svg')}}" alt="jobBox"><span class="name">Dashboard</span></a>
+                    <li> <a class="dashboard2 {{$dashboard}}" href="/intern_dashboard"><img src="{{asset('employerassets/imgs/page/dashboard/dashboard.svg')}}" alt="jobBox"><span class="name">Dashboard</span></a>
                     </li>
-                    <li> <a class="dashboard2 {{$candidate}}" href="/manage_class"><img src="{{asset('employerassets/imgs/page/dashboard/candidates.svg')}}" alt="jobBox"><span class="name">Class</span></a>
+                    <li> <a class="dashboard2 {{$candidate}}" href="/intern_class"><img src="{{asset('employerassets/imgs/page/dashboard/candidates.svg')}}" alt="jobBox"><span class="name">Class</span></a>
                     </li>
                    
-                    <li> <a class="dashboard2 {{$assessment}}" href="/coordinator_assessment"><img src="{{asset('employerassets/imgs/page/dashboard/jobs.svg')}}" alt="jobBox"><span class="name">Assessment</span></a>
+                    <li> <a class="dashboard2 {{$job}}" href="/employer-job"><img src="{{asset('employerassets/imgs/page/dashboard/jobs.svg')}}" alt="jobBox"><span class="name">Assessment</span></a>
                     </li>
                     <li> <a class="dashboard2 {{$message}}" href="/employer-message"><img src="{{asset('employerassets/imgs/page/dashboard/cv-manage.svg')}}" alt="jobBox"><span class="name">Message</span></a>
                     </li>
-                    <li> <a class="dashboard2 {{$profiles}}" href="/coordinator_profile"><img src="{{asset('employerassets/imgs/page/dashboard/profiles.svg')}}" alt="jobBox"><span class="name">Account</span></a>
+                    <li> <a class="dashboard2 {{$profiles}}" href="/intern_profile"><img src="{{asset('employerassets/imgs/page/dashboard/profiles.svg')}}" alt="jobBox"><span class="name">Account</span></a>
                     </li>
                     <li> <a class="dashboard2" href="/logout"><img src="{{asset('employerassets/imgs/page/dashboard/logout.svg')}}" alt="jobBox"><span class="name">Logout</span></a>
                     </li>

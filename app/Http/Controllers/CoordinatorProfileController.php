@@ -19,6 +19,7 @@ class CoordinatorProfileController extends Controller
     {
         if (session()->get('usertype') == 1) {
 
+            session()->put('page', "profile");
             $user_id = session()->get('userid');
             $account = Account::where('id',$user_id)->first();
             $departments = Department::where('status','active')->get();
@@ -113,9 +114,11 @@ class CoordinatorProfileController extends Controller
             $user_department->department_id=$department;
             $user_department->status='active';
             $user_department->save();
+
+            
             $path = "/coordinator_profile";
             return redirect($path)->with('success', 'Profile information successfully updated!');
-           
+            
 
         
         }

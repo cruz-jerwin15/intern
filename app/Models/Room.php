@@ -7,5 +7,11 @@ use Illuminate\Database\Eloquent\Model;
 
 class Room extends Model
 {
-    use HasFactory;
+    public function studentclass(){
+        return $this->hasMany(StudentClass::class,'class_id');
+       
+    }
+    public function assessclass(){
+        return $this->hasMany(AssessmentClass::class,'id','class_id');
+    }
 }

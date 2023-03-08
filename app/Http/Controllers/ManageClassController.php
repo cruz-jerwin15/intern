@@ -17,6 +17,7 @@ class ManageClassController extends Controller
         if (session()->get('usertype') == 1) {
 
             $user_id = session()->get('userid');
+            session()->put('page', "class");
             $rooms = Room::where('user_id',$user_id)->get();
             return view('Coordinator.Room.index')->with('rooms',$rooms);
         }

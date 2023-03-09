@@ -17,7 +17,10 @@ class SasCoordinatorController extends Controller
        
         if (session()->get('usertype') == 2) {
             session()->put('page', "coordinator");
-            $accounts = Account::where('privelege_id',1)->where('status','!=','pending')->get();
+            $user_id = session()->get('userid');
+            $school = Account::where('id',$user_id)->first();
+            $school_id = $school->school_id;
+            $accounts = Account::where('privelege_id',1)->where('status','!=','pending')->where('school_id',$school_id)->get();
             return view('Sas.Coordinator.index')->with('accounts',$accounts);
         }
     }

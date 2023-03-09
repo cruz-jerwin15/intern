@@ -40,6 +40,17 @@
               
                 </select>
               </div>
+              <div class="form-group">
+                <label class="form-label" for="input-8">School *</label>
+                <select class="form-control" id="input-8" required="" name="school">
+                  @if(count($schools)>0)
+                    @foreach ($schools as $key => $school)
+                      <option value="{{$school->id}}">{{strtoupper($school->school_name)}}</option>
+                    @endforeach
+                  @endif
+              
+                </select>
+              </div>
               <div class="login_footer form-group d-flex justify-content-between">
                 {{-- <label class="cb-container">
                   <input type="checkbox"><span class="text-small">Agree our terms and policy</span><span class="checkmark"></span>

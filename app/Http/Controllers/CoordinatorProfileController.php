@@ -22,7 +22,8 @@ class CoordinatorProfileController extends Controller
             session()->put('page', "profile");
             $user_id = session()->get('userid');
             $account = Account::where('id',$user_id)->first();
-            $departments = Department::where('status','active')->get();
+            $school_id = $account->school_id;
+            $departments = Department::where('status','active')->where('school_id',$school_id)->get();
             $coordinator = Coordinator::where('user_id',$user_id)->first();
             $userdepartment = UserDepartment::where('user_id',$user_id)->first();
             return view('Coordinator.Profile.index')->with('account',$account)->with('coordinator',$coordinator)->with('departments',$departments)->with('userdepartment',$userdepartment);

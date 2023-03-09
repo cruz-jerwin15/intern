@@ -83,6 +83,7 @@
                         $job="";
                         $message="";
                         $profiles="";
+                        $employer="";
                     @endphp
                     @if(session()->get('page')=="dashboard")
                         @php
@@ -92,6 +93,10 @@
                         @php
                         $candidate="active";
                         @endphp
+                     @elseif(session()->get('page')=="employer")
+                     @php
+                     $employer="active";
+                     @endphp
                     @elseif(session()->get('page')=="coordinator")
                     @php
                     $coordinator="active";
@@ -103,7 +108,7 @@
                     @endif
                     <li> <a class="dashboard2 {{$dashboard}}" href="/employer-dashboard"><img src="{{asset('employerassets/imgs/page/dashboard/dashboard.svg')}}" alt="jobBox"><span class="name">Dashboard</span></a>
                     </li>
-                    <li> <a class="dashboard2 {{$job}}" href="/employer-candidates"><img src="{{asset('employerassets/imgs/page/dashboard/candidates.svg')}}" alt="jobBox"><span class="name">Employer</span></a>
+                    <li> <a class="dashboard2 {{$employer}}" href="/sas_employer"><img src="{{asset('employerassets/imgs/page/dashboard/candidates.svg')}}" alt="jobBox"><span class="name">Employer</span></a>
                     </li>
                    
                     <li> <a class="dashboard2 {{$coordinator}}" href="/sas_coordinator"><img src="{{asset('employerassets/imgs/page/dashboard/jobs.svg')}}" alt="jobBox"><span class="name">Coordinator</span></a>
@@ -141,6 +146,7 @@
                         $job="";
                         $message="";
                         $profiles="";
+                        $employer="";
                     @endphp
                     @if(session()->get('page')=="dashboard")
                         @php
@@ -150,6 +156,10 @@
                         @php
                         $candidate="active";
                         @endphp
+                    @elseif(session()->get('page')=="employer")
+                    @php
+                    $employer="active";
+                    @endphp
                      @elseif(session()->get('page')=="coordinator")
                      @php
                      $coordinator="active";
@@ -157,7 +167,7 @@
                     @endif
                     <li> <a class="dashboard2 {{$dashboard}}" href="/employer-dashboard"><img src="{{asset('employerassets/imgs/page/dashboard/dashboard.svg')}}" alt="jobBox"><span class="name">Dashboard</span></a>
                     </li>
-                    <li> <a class="dashboard2 {{$candidate}}" href="/employer-candidates"><img src="{{asset('employerassets/imgs/page/dashboard/candidates.svg')}}" alt="jobBox"><span class="name">Employer</span></a>
+                    <li> <a class="dashboard2 {{$employer}}" href="/sas_employer"><img src="{{asset('employerassets/imgs/page/dashboard/candidates.svg')}}" alt="jobBox"><span class="name">Employer</span></a>
                     </li>
                    
                     <li> <a class="dashboard2 {{$coordinator}}" href="/sas_coordinator"><img src="{{asset('employerassets/imgs/page/dashboard/jobs.svg')}}" alt="jobBox"><span class="name">Coordinator</span></a>

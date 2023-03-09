@@ -10,6 +10,9 @@ class Account extends Model
    public function coordinator(){
     return $this->belongsTo(Coordinator::class,'id','user_id');
    }
+   public function employer(){
+      return $this->belongsTo(Company::class,'id','user_id');
+     }
    public function student(){
       return $this->belongsTo(Student::class,'id','user_id');
    }

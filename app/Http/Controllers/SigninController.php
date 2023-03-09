@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\Account;
 use App\Models\Coordinator;
 use App\Models\Student;
+use App\Models\Company;
 
 class SigninController extends Controller
 {
@@ -91,6 +92,22 @@ class SigninController extends Controller
 
                     }else{
                         $path = "/intern_dashboard";
+                        session()->put('page', "dashboard");
+                    }
+                }else if($account->privelege_id==4){
+                    $companies = Company::where('user_id',$user_id)->get();
+                    if(count($companies)>0){
+                        session()->put('profile', $companies[0]->image_profile);
+                    }else{
+                        session()->put('profile','avatar.png');
+                    }
+                    
+                    if($status=="pending"){
+                        $path = "/employer_profile";
+                        session()->put('page', "profile");
+
+                    }else{
+                        $path = "/employer_dashboard";
                         session()->put('page', "dashboard");
                     }
                 }else{

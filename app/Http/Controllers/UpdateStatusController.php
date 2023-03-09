@@ -9,6 +9,7 @@ use App\Models\StudentClass;
 use App\Models\Topic;
 use App\Models\Question;
 use App\Models\AssessmentClass;
+use App\Models\Company;
 
 class UpdateStatusController extends Controller
 {
@@ -121,6 +122,27 @@ class UpdateStatusController extends Controller
             $result->save();
             $path = "/coordinator_assessment/";
             return redirect($path)->with('success', 'Class successfully removed from this assessment!');
+        }
+        else if($process=="APPROVEDEMPLOYER"){
+            $result = Account::where('id',$statusid)->first();
+            $result->status="active";
+            $result->save();
+            $path = "/sas_employer/";
+            return redirect($path)->with('success', 'Employer successfully approved!');
+        }
+        else if($process=="DISAPPROVEDEMPLOYER"){
+            $result = Account::where('id',$statusid)->first();
+            $result->status="inactive";
+            $result->save();
+            $path = "/sas_employer/";
+            return redirect($path)->with('success', 'Employer successfully disapproved!');
+        }
+        else if($process=="RETRIEVEEMPLOYER"){
+            $result = Account::where('id',$statusid)->first();
+            $result->status="active";
+            $result->save();
+            $path = "/sas_employer/";
+            return redirect($path)->with('success', 'Employer successfully retrieved and already active!');
         }
         
     }

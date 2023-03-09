@@ -84,7 +84,7 @@
                     @php
                         $dashboard="";
                         $candidate="";
-                        $assessment="";
+                        $ads="";
                         $message="";
                         $profiles="";
                     @endphp
@@ -92,25 +92,25 @@
                         @php
                         $dashboard="active";
                         @endphp
-                    @elseif(session()->get('page')=="class")
+                    @elseif(session()->get('page')=="candidates")
                         @php
                         $candidate="active";
                         @endphp
-                    @elseif(session()->get('page')=="assessment")
+                    @elseif(session()->get('page')=="ads")
                         @php
-                        $assessment="active";
+                        $ads="active";
                         @endphp
                     @elseif(session()->get('page')=="profile")
                         @php
                         $profiles="active";
                         @endphp
                     @endif
-                    <li> <a class="dashboard2 {{$dashboard}}" href="/coordinator_dashboard"><img src="{{asset('employerassets/imgs/page/dashboard/dashboard.svg')}}" alt="jobBox"><span class="name">Dashboard</span></a>
+                    <li> <a class="dashboard2 {{$dashboard}}" href="/employer_dashboard"><img src="{{asset('employerassets/imgs/page/dashboard/dashboard.svg')}}" alt="jobBox"><span class="name">Dashboard</span></a>
                     </li>
-                    <li> <a class="dashboard2 {{$candidate}}" href="/manage_class"><img src="{{asset('employerassets/imgs/page/dashboard/candidates.svg')}}" alt="jobBox"><span class="name">Class</span></a>
+                    <li> <a class="dashboard2 {{$ads}}" href="/employer_ads"><img src="{{asset('employerassets/imgs/page/dashboard/candidates.svg')}}" alt="jobBox"><span class="name">Ads</span></a>
                     </li>
                    
-                    <li> <a class="dashboard2 {{$assessment}}" href="/coordinator_assessment"><img src="{{asset('employerassets/imgs/page/dashboard/jobs.svg')}}" alt="jobBox"><span class="name">Assessment</span></a>
+                    <li> <a class="dashboard2 {{$candidate}}" href="/employer_candidates"><img src="{{asset('employerassets/imgs/page/dashboard/jobs.svg')}}" alt="jobBox"><span class="name">Candidates</span></a>
                     </li>
                     <li> <a class="dashboard2 {{$message}}" href="/employer-message"><img src="{{asset('employerassets/imgs/page/dashboard/cv-manage.svg')}}" alt="jobBox"><span class="name">Message</span></a>
                     </li>
@@ -141,7 +141,7 @@
             @php
                         $dashboard="";
                         $candidate="";
-                        $assessment="";
+                        $ads="";
                         $message="";
                         $profiles="";
                     @endphp
@@ -149,25 +149,25 @@
                         @php
                         $dashboard="active";
                         @endphp
-                    @elseif(session()->get('page')=="class")
+                    @elseif(session()->get('page')=="candidates")
                         @php
                         $candidate="active";
                         @endphp
-                     @elseif(session()->get('page')=="assessment")
-                     @php
-                     $assessment="active";
-                     @endphp
+                    @elseif(session()->get('page')=="ads")
+                        @php
+                        $ads="active";
+                        @endphp
                     @elseif(session()->get('page')=="profile")
-                    @php
-                    $profiles="active";
-                    @endphp
+                        @php
+                        $profiles="active";
+                        @endphp
                     @endif
-                    <li> <a class="dashboard2 {{$dashboard}}" href="/coordinator_dashboard"><img src="{{asset('employerassets/imgs/page/dashboard/dashboard.svg')}}" alt="jobBox"><span class="name">Dashboard</span></a>
+                    <li> <a class="dashboard2 {{$dashboard}}" href="/employer_dashboard"><img src="{{asset('employerassets/imgs/page/dashboard/dashboard.svg')}}" alt="jobBox"><span class="name">Dashboard</span></a>
                     </li>
-                    <li> <a class="dashboard2 {{$candidate}}" href="/manage_class"><img src="{{asset('employerassets/imgs/page/dashboard/candidates.svg')}}" alt="jobBox"><span class="name">Class</span></a>
+                    <li> <a class="dashboard2 {{$ads}}" href="/employer_ads"><img src="{{asset('employerassets/imgs/page/dashboard/candidates.svg')}}" alt="jobBox"><span class="name">Ads</span></a>
                     </li>
                    
-                    <li> <a class="dashboard2 {{$assessment}}" href="/coordinator_assessment"><img src="{{asset('employerassets/imgs/page/dashboard/jobs.svg')}}" alt="jobBox"><span class="name">Assessment</span></a>
+                    <li> <a class="dashboard2 {{$candidate}}" href="/employer_candidates"><img src="{{asset('employerassets/imgs/page/dashboard/jobs.svg')}}" alt="jobBox"><span class="name">Candidates</span></a>
                     </li>
                     <li> <a class="dashboard2 {{$message}}" href="/employer-message"><img src="{{asset('employerassets/imgs/page/dashboard/cv-manage.svg')}}" alt="jobBox"><span class="name">Message</span></a>
                     </li>

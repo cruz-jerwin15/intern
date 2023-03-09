@@ -3,8 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\Specialization;
-class EmployerDashboardController extends Controller
+use App\Models\CourseTrack;
+use App\Models\Skill;
+class EmployerManageAdsController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -13,11 +14,9 @@ class EmployerDashboardController extends Controller
      */
     public function index()
     {
-
         if (session()->get('usertype') ==4) {
-            session()->put('page', "dashboard");
-            $specilizations = Specialization::where('status','active')->get();
-            return view('Employer.Dashboard.index');
+            session()->put('page', "ads");
+            return view('Employer.Ads.index');
         }
     }
 
@@ -28,7 +27,14 @@ class EmployerDashboardController extends Controller
      */
     public function create()
     {
-        //
+        if (session()->get('usertype') ==4) {
+            session()->put('page', "ads");
+            $course_track = CourseTrack::where('status','active')->get();
+            $softskills = Skill::where('status','active')->where('specialization_id',1)->get();
+            $techskills = Skill::where('status','active')->where('specialization_id',3)->get();
+            $industryskills = Skill::where('status','active')->where('specialization_id',2)->get();
+            return view('Employer.Ads.index')->with('course_track',$course_track)->with('softskills',$softskills)->with('techskills',$techskills)->with('industryskills',$industryskills);
+        }
     }
 
     /**

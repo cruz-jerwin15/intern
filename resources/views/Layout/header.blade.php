@@ -70,30 +70,13 @@
     </div>
     <header class="header sticky-bar">
         <div class="container">
-          <div class="main-header">
+          <div class="main-header d-flex justify-content-around">
             <div class="header-left">
               <div class="header-logo"><a style="font-size:20px;" class="d-flex" href="/">
                   <h3>CareerIn</h3>
               </a></div>
             </div>
-            <div class="header-nav">
-              <nav class="nav-main-menu">
-                <ul class="main-menu">
-                  <li class=""><a class="active" href="/">Home</a>
-                   
-                  </li>
-                  <li class=""><a href="/find-ojt">OJT</a>
-                    
-                  </li>
-                  <li class=""><a href="/employer">Employers</a>
-                    
-                  </li>
-                 
-                  <li><a href="/contact">Contact</a></li>
-                </ul>
-              </nav>
-              <div class="burger-icon burger-icon-white"><span class="burger-icon-top"></span><span class="burger-icon-mid"></span><span class="burger-icon-bottom"></span></div>
-            </div>
+           
             <div class="header-right">
               <div class="block-signin"><a class="text-link-bd-btom hover-up" href="/register">Register</a><a class="btn btn-default btn-shadow ml-40 hover-up" href="/signin">Sign in</a></div>
             </div>
@@ -190,7 +173,7 @@
     <footer class="footer mt-50">
         <div class="container">
           <div class="row">
-            <div class="footer-col-1 col-md-3 col-sm-12"><a href="index.html"><h4>CareerIn</h4></a>
+            <div class="footer-col-1 col-md-3 col-sm-12"><a href="/"><h4>CareerIn</h4></a>
               <div class="mt-20 mb-20 font-xs color-text-paragraph-2">CareerIn is the heart of the design community and the best resource to discover and connect with designers and jobs worldwide.</div>
               <div class="footer-social"><a class="icon-socials icon-facebook" href="#"></a><a class="icon-socials icon-twitter" href="#"></a><a class="icon-socials icon-linkedin" href="#"></a></div>
             </div>
